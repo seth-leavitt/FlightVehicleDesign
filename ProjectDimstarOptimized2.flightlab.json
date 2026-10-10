@@ -1,0 +1,997 @@
+{
+  "name": "ProjectDimstar Optimized",
+  "surfaces": [
+    {
+      "name": "Main wing",
+      "purpose": "wing",
+      "trim_control": "fixed",
+      "symmetric": true,
+      "stations": [
+        {
+          "x_le": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "chord": 0.3,
+          "twist_deg": 0.0,
+          "airfoil": "e168"
+        },
+        {
+          "x_le": 0.0,
+          "y": 0.3,
+          "z": 0.0,
+          "chord": 0.3,
+          "twist_deg": 0.0,
+          "airfoil": "e168"
+        },
+        {
+          "x_le": 0.00917564668127896,
+          "y": 0.6,
+          "z": 0.10528526392001379,
+          "chord": 0.29082435331872103,
+          "twist_deg": 0.09030285466575365,
+          "airfoil": "e168"
+        }
+      ],
+      "control_hinge_fraction": 0.75,
+      "control_min_deg": -25.0,
+      "control_max_deg": 25.0
+    },
+    {
+      "name": "Horizontal tail",
+      "purpose": "tail",
+      "trim_control": "elevator",
+      "symmetric": true,
+      "stations": [
+        {
+          "x_le": 0.72,
+          "y": 0.0,
+          "z": 0.04,
+          "chord": 0.19429575858938847,
+          "twist_deg": -0.2057158226702381,
+          "airfoil": "naca0012"
+        },
+        {
+          "x_le": 0.72,
+          "y": 0.25,
+          "z": 0.04,
+          "chord": 0.19429575858938847,
+          "twist_deg": -0.2057158226702381,
+          "airfoil": "naca0012"
+        }
+      ],
+      "control_hinge_fraction": 0.75,
+      "control_min_deg": -25.0,
+      "control_max_deg": 25.0
+    },
+    {
+      "name": "Vertical tail 1",
+      "purpose": "fin",
+      "trim_control": "fixed",
+      "symmetric": true,
+      "stations": [
+        {
+          "x_le": 0.68,
+          "y": -0.25,
+          "z": 0.04,
+          "chord": 0.22,
+          "twist_deg": 0.0,
+          "airfoil": "naca0012"
+        },
+        {
+          "x_le": 0.78,
+          "y": -0.25,
+          "z": 0.28,
+          "chord": 0.1,
+          "twist_deg": 0.0,
+          "airfoil": "naca0012"
+        }
+      ],
+      "control_hinge_fraction": 0.75,
+      "control_min_deg": -25.0,
+      "control_max_deg": 25.0
+    }
+  ],
+  "reference": {
+    "mode": "surface",
+    "surface": "Main wing",
+    "surfaces": [],
+    "area": null,
+    "span": null,
+    "chord": null
+  },
+  "bodies": [
+    {
+      "name": "MainFuselage",
+      "length": 0.3,
+      "width": null,
+      "height": null,
+      "diameter": 0.33,
+      "x_nose": null,
+      "y": 0.0,
+      "z": 0.0,
+      "count": 1,
+      "drag_model": "streamlined_body",
+      "drag_area": null,
+      "cone_fraction": 0.4
+    },
+    {
+      "name": "LeftBoom",
+      "length": 0.5,
+      "width": null,
+      "height": null,
+      "diameter": 0.08,
+      "x_nose": 0.3,
+      "y": -0.166,
+      "z": 0.0,
+      "count": 1,
+      "drag_model": "streamlined_body",
+      "drag_area": null,
+      "cone_fraction": 0.4
+    },
+    {
+      "name": "RightBoom",
+      "length": 0.5,
+      "width": null,
+      "height": null,
+      "diameter": 0.08,
+      "x_nose": 0.3,
+      "y": 0.166,
+      "z": 0.0,
+      "count": 1,
+      "drag_model": "streamlined_body",
+      "drag_area": null,
+      "cone_fraction": 0.4
+    }
+  ],
+  "masses": [
+    {
+      "name": "The entire plane",
+      "mass": 0.6,
+      "x": 0.13417772778256554,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "point",
+      "span": null,
+      "attached_to": "",
+      "density": null,
+      "skin_thickness": null
+    }
+  ],
+  "cases": [
+    {
+      "name": "Cruise",
+      "speed": 30.0,
+      "altitude": 1400.0,
+      "load_factor": 1.0,
+      "alpha_deg": 2.0,
+      "interference": 0.05,
+      "protuberance": 0.1,
+      "f_other": 0.0,
+      "cooling": 0.0,
+      "n_crit": 9.0,
+      "xtr_upper": 1.0,
+      "xtr_lower": 1.0
+    },
+    {
+      "name": "Takeoff",
+      "speed": 15.0,
+      "altitude": 1400.0,
+      "load_factor": 1.0,
+      "alpha_deg": 2.0,
+      "interference": 0.05,
+      "protuberance": 0.1,
+      "f_other": 0.0,
+      "cooling": 0.0,
+      "n_crit": 9.0,
+      "xtr_upper": 1.0,
+      "xtr_lower": 1.0
+    },
+    {
+      "name": "Maneuver",
+      "speed": 40.0,
+      "altitude": 1400.0,
+      "load_factor": 3.0,
+      "alpha_deg": 2.0,
+      "interference": 0.05,
+      "protuberance": 0.1,
+      "f_other": 0.0,
+      "cooling": 0.0,
+      "n_crit": 9.0,
+      "xtr_upper": 1.0,
+      "xtr_lower": 1.0
+    }
+  ],
+  "airfoils": {
+    "esa40": {
+      "name": "ESA40",
+      "coordinates": [
+        [
+          1.0,
+          0.00445
+        ],
+        [
+          0.99754,
+          0.004521
+        ],
+        [
+          0.9907,
+          0.004603
+        ],
+        [
+          0.98037,
+          0.004515
+        ],
+        [
+          0.96698,
+          0.004211
+        ],
+        [
+          0.95044,
+          0.003748
+        ],
+        [
+          0.93064,
+          0.003167
+        ],
+        [
+          0.90775,
+          0.002388
+        ],
+        [
+          0.88202,
+          0.001578
+        ],
+        [
+          0.8537,
+          0.002132
+        ],
+        [
+          0.82309,
+          0.005572
+        ],
+        [
+          0.79048,
+          0.010199
+        ],
+        [
+          0.75616,
+          0.015054
+        ],
+        [
+          0.72043,
+          0.020294
+        ],
+        [
+          0.68359,
+          0.025638
+        ],
+        [
+          0.64594,
+          0.0308
+        ],
+        [
+          0.60778,
+          0.035771
+        ],
+        [
+          0.56937,
+          0.040633
+        ],
+        [
+          0.53099,
+          0.045353
+        ],
+        [
+          0.49265,
+          0.049829
+        ],
+        [
+          0.45435,
+          0.053959
+        ],
+        [
+          0.41638,
+          0.057687
+        ],
+        [
+          0.37887,
+          0.061045
+        ],
+        [
+          0.34204,
+          0.063997
+        ],
+        [
+          0.30609,
+          0.066434
+        ],
+        [
+          0.2712,
+          0.068276
+        ],
+        [
+          0.2376,
+          0.069523
+        ],
+        [
+          0.20549,
+          0.070194
+        ],
+        [
+          0.17504,
+          0.070224
+        ],
+        [
+          0.14648,
+          0.069444
+        ],
+        [
+          0.11999,
+          0.067601
+        ],
+        [
+          0.09576,
+          0.064436
+        ],
+        [
+          0.07395,
+          0.059758
+        ],
+        [
+          0.05468,
+          0.053529
+        ],
+        [
+          0.03811,
+          0.04599
+        ],
+        [
+          0.02433,
+          0.037596
+        ],
+        [
+          0.01338,
+          0.028281
+        ],
+        [
+          0.00548,
+          0.017182
+        ],
+        [
+          0.00098,
+          0.005977
+        ],
+        [
+          0.0,
+          2.2e-05
+        ],
+        [
+          0.00098,
+          -0.003981
+        ],
+        [
+          0.00548,
+          -0.007533
+        ],
+        [
+          0.01338,
+          -0.010415
+        ],
+        [
+          0.02433,
+          -0.01355
+        ],
+        [
+          0.03811,
+          -0.01679
+        ],
+        [
+          0.05468,
+          -0.019718
+        ],
+        [
+          0.07395,
+          -0.022389
+        ],
+        [
+          0.09576,
+          -0.025007
+        ],
+        [
+          0.11999,
+          -0.02748
+        ],
+        [
+          0.14648,
+          -0.029696
+        ],
+        [
+          0.17504,
+          -0.031944
+        ],
+        [
+          0.20549,
+          -0.034411
+        ],
+        [
+          0.2376,
+          -0.036815
+        ],
+        [
+          0.2712,
+          -0.038899
+        ],
+        [
+          0.30609,
+          -0.040675
+        ],
+        [
+          0.34204,
+          -0.042243
+        ],
+        [
+          0.37887,
+          -0.043522
+        ],
+        [
+          0.41638,
+          -0.044296
+        ],
+        [
+          0.45435,
+          -0.044467
+        ],
+        [
+          0.49265,
+          -0.044085
+        ],
+        [
+          0.53099,
+          -0.043248
+        ],
+        [
+          0.56937,
+          -0.041963
+        ],
+        [
+          0.60778,
+          -0.040221
+        ],
+        [
+          0.64594,
+          -0.038161
+        ],
+        [
+          0.68359,
+          -0.036003
+        ],
+        [
+          0.72043,
+          -0.0339
+        ],
+        [
+          0.75616,
+          -0.031876
+        ],
+        [
+          0.79048,
+          -0.029811
+        ],
+        [
+          0.82309,
+          -0.027393
+        ],
+        [
+          0.8537,
+          -0.024131
+        ],
+        [
+          0.88202,
+          -0.020255
+        ],
+        [
+          0.90775,
+          -0.016698
+        ],
+        [
+          0.93064,
+          -0.013692
+        ],
+        [
+          0.95044,
+          -0.011083
+        ],
+        [
+          0.96698,
+          -0.008754
+        ],
+        [
+          0.98037,
+          -0.00679
+        ],
+        [
+          0.9907,
+          -0.005377
+        ],
+        [
+          0.99754,
+          -0.004624
+        ],
+        [
+          0.999908,
+          -0.004423
+        ]
+      ],
+      "source": "user supplied .dat file"
+    },
+    "e168": {
+      "name": "E168  (12.45%)",
+      "coordinates": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.99649,
+          0.00021
+        ],
+        [
+          0.98631,
+          0.00108
+        ],
+        [
+          0.97018,
+          0.00271
+        ],
+        [
+          0.94855,
+          0.00476
+        ],
+        [
+          0.92146,
+          0.00706
+        ],
+        [
+          0.88914,
+          0.00979
+        ],
+        [
+          0.8521,
+          0.01306
+        ],
+        [
+          0.8109,
+          0.01691
+        ],
+        [
+          0.76616,
+          0.0213
+        ],
+        [
+          0.71854,
+          0.02615
+        ],
+        [
+          0.66871,
+          0.03135
+        ],
+        [
+          0.61736,
+          0.03673
+        ],
+        [
+          0.56516,
+          0.04211
+        ],
+        [
+          0.51275,
+          0.04728
+        ],
+        [
+          0.46075,
+          0.052
+        ],
+        [
+          0.40972,
+          0.05606
+        ],
+        [
+          0.36019,
+          0.05924
+        ],
+        [
+          0.31262,
+          0.06134
+        ],
+        [
+          0.26739,
+          0.06221
+        ],
+        [
+          0.22485,
+          0.06177
+        ],
+        [
+          0.18536,
+          0.05995
+        ],
+        [
+          0.14915,
+          0.05672
+        ],
+        [
+          0.11641,
+          0.05211
+        ],
+        [
+          0.0873,
+          0.04627
+        ],
+        [
+          0.06198,
+          0.03944
+        ],
+        [
+          0.04069,
+          0.03187
+        ],
+        [
+          0.02363,
+          0.0238
+        ],
+        [
+          0.01095,
+          0.0155
+        ],
+        [
+          0.00287,
+          0.00733
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.00287,
+          -0.00733
+        ],
+        [
+          0.01095,
+          -0.0155
+        ],
+        [
+          0.02363,
+          -0.0238
+        ],
+        [
+          0.04069,
+          -0.03187
+        ],
+        [
+          0.06198,
+          -0.03944
+        ],
+        [
+          0.0873,
+          -0.04627
+        ],
+        [
+          0.11641,
+          -0.05211
+        ],
+        [
+          0.14915,
+          -0.05672
+        ],
+        [
+          0.18536,
+          -0.05995
+        ],
+        [
+          0.22485,
+          -0.06177
+        ],
+        [
+          0.26739,
+          -0.06221
+        ],
+        [
+          0.31262,
+          -0.06134
+        ],
+        [
+          0.36019,
+          -0.05924
+        ],
+        [
+          0.40972,
+          -0.05606
+        ],
+        [
+          0.46075,
+          -0.052
+        ],
+        [
+          0.51275,
+          -0.04728
+        ],
+        [
+          0.56516,
+          -0.04211
+        ],
+        [
+          0.61736,
+          -0.03673
+        ],
+        [
+          0.66871,
+          -0.03135
+        ],
+        [
+          0.71854,
+          -0.02615
+        ],
+        [
+          0.76616,
+          -0.0213
+        ],
+        [
+          0.8109,
+          -0.01691
+        ],
+        [
+          0.8521,
+          -0.01306
+        ],
+        [
+          0.88914,
+          -0.00979
+        ],
+        [
+          0.92146,
+          -0.00706
+        ],
+        [
+          0.94855,
+          -0.00476
+        ],
+        [
+          0.97018,
+          -0.00271
+        ],
+        [
+          0.98631,
+          -0.00108
+        ],
+        [
+          0.99649,
+          -0.00021
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "source": "user supplied .dat file"
+    }
+  },
+  "propulsion": {
+    "battery": "B3S1300",
+    "state_of_charge": 0.9,
+    "battery_x": 0.02,
+    "battery_y": 0.0,
+    "battery_z": 0.0,
+    "include_component_masses": true,
+    "propulsors": [
+      {
+        "name": "Propulsor 1",
+        "motor": "M1000",
+        "propeller": "P10x7",
+        "esc": "ESC30",
+        "throttle": 1.0,
+        "x": -0.08,
+        "y": 0.1666,
+        "z": 0.0,
+        "pitch_deg": 0.0,
+        "yaw_deg": 0.0
+      },
+      {
+        "name": "Propulsor 2",
+        "motor": "M1000",
+        "propeller": "P10x7",
+        "esc": "ESC30",
+        "throttle": 1.0,
+        "x": -0.08,
+        "y": -0.1666,
+        "z": 0.0,
+        "pitch_deg": 0.0,
+        "yaw_deg": 0.0
+      }
+    ]
+  },
+  "structure": {
+    "surface": "Main wing",
+    "spar_height": 0.03,
+    "allowable_stress": 300000000.0,
+    "ultimate_factor": 1.5,
+    "elastic_modulus": 70000000000.0,
+    "cap_width": 0.02
+  },
+  "motors": {
+    "M820": {
+      "key": "M820",
+      "name": "EMAX XA2212-820, 820 Kv",
+      "Kv_rpm": 820.0,
+      "resistance": 0.2,
+      "current_no_load": 0.6,
+      "current_max": 16.0,
+      "mass": 0.057,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Lowest Kv here: turns a large propeller slowly, which is the efficient way to make thrust at low speed."
+    },
+    "M1000": {
+      "key": "M1000",
+      "name": "generic A2212-13T, 1000 Kv",
+      "Kv_rpm": 1000.0,
+      "resistance": 0.1,
+      "current_no_load": 0.85,
+      "current_max": 13.0,
+      "mass": 0.05,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. The cheapest and most widely stocked motor of this class, and RC-1's baseline. Note the low current limit."
+    },
+    "M1250": {
+      "key": "M1250",
+      "name": "SunnySky X2216-11, 1250 Kv",
+      "Kv_rpm": 1250.0,
+      "resistance": 0.06,
+      "current_no_load": 1.1,
+      "current_max": 26.0,
+      "mass": 0.068,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Highest peak efficiency in the catalog, and 18 g heavier than the lightest. Whether that is worth it depends on the mission, which is the point."
+    },
+    "M1400": {
+      "key": "M1400",
+      "name": "generic A2212-10T, 1400 Kv",
+      "Kv_rpm": 1400.0,
+      "resistance": 0.085,
+      "current_no_load": 1.45,
+      "current_max": 15.0,
+      "mass": 0.05,
+      "no_load_voltage": 11.1,
+      "cells_min": 2,
+      "cells_max": 3,
+      "provisional": true,
+      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Highest Kv and the WORST peak efficiency, because peak efficiency ranks with I0*R/V and this motor's no-load current is high. Students expect the opposite."
+    }
+  },
+  "batteries": {
+    "B2S1300": {
+      "key": "B2S1300",
+      "name": "2S 7.4 V 1300 mAh 45C LiPo",
+      "cells_series": 2,
+      "cells_parallel": 1,
+      "capacity_ah": 1.3,
+      "mass": 0.075,
+      "c_rating": 45.0,
+      "cell_resistance": 0.01,
+      "cell_voltage_nominal": 3.7,
+      "cell_voltage_full": 4.2,
+      "cell_voltage_empty": 3.0,
+      "provisional": true,
+      "notes": "Widely stocked hobby pack. Mass is the vendor figure; cell_resistance is an ESTIMATE to be measured."
+    },
+    "B3S2200": {
+      "key": "B3S2200",
+      "name": "3S 11.1 V 2200 mAh 50C LiPo",
+      "cells_series": 3,
+      "cells_parallel": 1,
+      "capacity_ah": 2.2,
+      "mass": 0.185,
+      "c_rating": 50.0,
+      "cell_resistance": 0.008,
+      "cell_voltage_nominal": 3.7,
+      "cell_voltage_full": 4.2,
+      "cell_voltage_empty": 3.0,
+      "provisional": true,
+      "notes": "70 g heavier than B3S1300 for 69% more energy. Whether that is a good trade is the endurance-versus-mass question, and it depends on the mission. cell_resistance is an ESTIMATE."
+    },
+    "B3S1300": {
+      "key": "B3S1300",
+      "name": "3S 11.1 V 1300 mAh 45C LiPo",
+      "cells_series": 3,
+      "cells_parallel": 1,
+      "capacity_ah": 1.3,
+      "mass": 0.115,
+      "c_rating": 45.0,
+      "cell_resistance": 0.012,
+      "cell_voltage_nominal": 3.7,
+      "cell_voltage_full": 4.2,
+      "cell_voltage_empty": 3.0,
+      "provisional": true,
+      "notes": "RC-1's baseline pack; its 115 g matches the battery row of the RC-1 component mass table. cell_resistance is an ESTIMATE."
+    }
+  },
+  "escs": {
+    "ESC30": {
+      "key": "ESC30",
+      "name": "30 A brushless ESC with 5 V BEC",
+      "current_max": 30.0,
+      "mass": 0.025,
+      "efficiency": 0.95,
+      "provisional": true
+    },
+    "ESC40": {
+      "key": "ESC40",
+      "name": "40 A brushless ESC with 5 V BEC",
+      "current_max": 40.0,
+      "mass": 0.038,
+      "efficiency": 0.96,
+      "provisional": true
+    }
+  },
+  "propellers": {
+    "P8x6": {
+      "key": "P8x6",
+      "name": "APC 8x6E",
+      "mass": 0.01,
+      "data": "apce_8x6",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder"
+    },
+    "P9x6": {
+      "key": "P9x6",
+      "name": "APC 9x6E",
+      "mass": 0.012,
+      "data": "apce_9x6",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder"
+    },
+    "P10x5": {
+      "key": "P10x5",
+      "name": "APC 10x5E",
+      "mass": 0.014,
+      "data": "apce_10x5",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder. Same diameter as P10x7 and less pitch, making it a controlled pitch comparison."
+    },
+    "P10x7": {
+      "key": "P10x7",
+      "name": "APC 10x7E",
+      "mass": 0.014,
+      "data": "apce_10x7",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder. RC-1's baseline propeller, and the one on the thrust stand."
+    },
+    "P11x7": {
+      "key": "P11x7",
+      "name": "APC 11x7E",
+      "mass": 0.017,
+      "data": "apce_11x7",
+      "diameter": null,
+      "pitch": null,
+      "points": [],
+      "notes": "performance measured; mass is a placeholder"
+    }
+  },
+  "notes": "-Lifting Surfaces are tentatively planned\nVerified optimized design: wing=e168, tail=naca0012; Cruise static margin 13.43% MAC, span efficiency 0.97169, pitch-control deflection +0.00172 deg.",
+  "format_version": 3
+}
