@@ -46,7 +46,7 @@
           "z": -0.05,
           "chord": 0.194,
           "twist_deg": -2.0,
-          "airfoil": "clarky"
+          "airfoil": "naca0012"
         },
         {
           "x_le": 0.906,
@@ -54,7 +54,7 @@
           "z": -0.05,
           "chord": 0.194,
           "twist_deg": -2.0,
-          "airfoil": "clarky"
+          "airfoil": "naca0012"
         }
       ],
       "control_hinge_fraction": 0.75,
