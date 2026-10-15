@@ -16,7 +16,7 @@
         },
         {
           "x_le": 0.0,
-          "y": 0.3,
+          "y": 0.28,
           "z": 0.0,
           "chord": 0.3,
           "twist_deg": 0.0,
@@ -150,7 +150,7 @@
       "distributed": "surface_volume",
       "span": null,
       "attached_to": "Main wing",
-      "density": 30.0,
+      "density": 25.0,
       "skin_thickness": null
     },
     {
@@ -162,7 +162,7 @@
       "distributed": "surface_volume",
       "span": null,
       "attached_to": "Horizontal tail",
-      "density": 30.0,
+      "density": 25.0,
       "skin_thickness": null
     },
     {
@@ -186,7 +186,7 @@
       "distributed": "surface_volume",
       "span": null,
       "attached_to": "Vertical tail",
-      "density": 30.0,
+      "density": 25.0,
       "skin_thickness": null
     }
   ],
@@ -806,7 +806,7 @@
     }
   },
   "propulsion": {
-    "battery": "B3S1000",
+    "battery": "B3S5000",
     "state_of_charge": 0.9,
     "battery_x": -0.05,
     "battery_y": 0.0,
@@ -814,11 +814,11 @@
     "include_component_masses": true,
     "propulsors": [
       {
-        "name": "Propulsor 1",
-        "motor": "M1260",
-        "propeller": "P10x4.7",
-        "esc": "ESC40",
-        "throttle": 1.0,
+        "name": "EDF (R)",
+        "motor": "EDF50-4300KV",
+        "propeller": "EDF50-11B",
+        "esc": "ESC50",
+        "throttle": 0.08,
         "x": -0.08,
         "y": 0.1,
         "z": -0.05,
@@ -826,11 +826,11 @@
         "yaw_deg": 0.0
       },
       {
-        "name": "Propulsor 2",
-        "motor": "M1260",
-        "propeller": "P10x4.7",
-        "esc": "ESC40",
-        "throttle": 1.0,
+        "name": "ERF (L)",
+        "motor": "EDF50-4300KV",
+        "propeller": "EDF50-11B",
+        "esc": "ESC50",
+        "throttle": 0.08,
         "x": -0.08,
         "y": -0.1,
         "z": -0.05,
@@ -886,6 +886,19 @@
       "cells_min": 2,
       "cells_max": 4,
       "notes": "Kv, resistance, no-load current, current_max and mass are SunnySky's published datasheet figures for this winding (no-load current quoted at 10 V); confirm them against the listing at order time. Same can as the KV1100 with fewer turns of thicker wire: lower resistance, a no-load current of 1.3 A, and the WORST peak efficiency of the three despite the highest Kv, because peak efficiency ranks with I0*R. It needs about 16 A to reach that peak; on a small propeller at 3 A it is the least efficient motor here by a wide margin. SunnySky recommends a 40 A ESC and the APC 9x4.7, 9x4.5, 9x6, 8x6 and 7x6."
+    },
+    "EDF50-4300KV": {
+      "key": "EDF50-4300KV",
+      "name": "PowerFun 50 mm 11-blade EDF motor, 4300 KV (estimated electrical model)",
+      "Kv_rpm": 4300.0,
+      "resistance": 0.117,
+      "current_no_load": 2.5,
+      "current_max": 31.0,
+      "mass": 0.062,
+      "no_load_voltage": 11.1,
+      "cells_min": 3,
+      "cells_max": 4,
+      "notes": "PUBLISHED: Kv 4300 rpm/V; fan+motor assembly 77 g; 3S static 471 gf at 11.13 V / 20.1 A / 223 W; 4S static 765 gf at 14.79 V / 31.0 A / 458 W; recommended 50 A ESC. Source: PowerFun 50 mm 11-blade 4300 KV EDF, 4-Max listing (https://www.4-max.co.uk/edf-pf-50mm-4S.html). ESTIMATED: resistance 0.117 ohm and no-load current 2.5 A were back-solved so that this motor + EDF50-11B + ESC50 reproduce BOTH published static points inside FlightLab's own model (3S: 471 gf, 20.1 A; 4S: 765 gf, 31.0 A, with motor-terminal voltage = published voltage). They are effective values that absorb ESC/wiring losses, not datasheet figures; implied loaded speed is ~38,100 rpm on 3S and ~48,600 rpm on 4S. ASSUMED: current_max 31 A is the published 4S operating current used as a cap, not a manufacturer continuous rating. MASS: 0.062 kg here + 0.015 kg on EDF50-11B = the published 77 g assembly; the split is arbitrary."
     }
   },
   "batteries": {
@@ -916,6 +929,20 @@
       "cell_voltage_full": 4.2,
       "cell_voltage_empty": 3.0,
       "notes": "Turnigy 1000 mAh 3S 40C with XT60; capacity and C rating are HobbyKing's listing, the mass is typical for the pack (the listings disagree between 88 and 105 g: weigh one), and cell_resistance is an estimate. RC-1's baseline pack."
+    },
+    "B3S5000": {
+      "key": "B3S5000",
+      "name": "OVONIC 3S 11.1V 5000mAh 120C",
+      "cells_series": 3,
+      "cells_parallel": 1,
+      "capacity_ah": 5.0,
+      "mass": 0.358,
+      "c_rating": 120.0,
+      "cell_resistance": 0.01,
+      "cell_voltage_nominal": 3.7,
+      "cell_voltage_full": 4.2,
+      "cell_voltage_empty": 3.0,
+      "notes": "OVONIC 3S LiPo Battery 11.1V 5000mAh 120C"
     }
   },
   "escs": {
@@ -924,6 +951,13 @@
       "name": "SunnySky X-series 40 A airplane ESC, 4 A BEC",
       "current_max": 40.0,
       "mass": 0.04,
+      "efficiency": 0.96
+    },
+    "ESC50": {
+      "key": "ESC50",
+      "name": "Generic 50 A ESC (PowerFun-recommended rating)",
+      "current_max": 50.0,
+      "mass": 0.035,
       "efficiency": 0.96
     }
   },
@@ -960,6 +994,198 @@
       "rpm_max": 6500.0,
       "points": [],
       "notes": "APC slow flyer; UIUC measured performance, APC published mass (0.42 oz). Largest disk in the catalog, which is the efficient way to make static thrust, at the cost of the highest torque demand. Same pitch as P9x4.7, so the pair is a controlled diameter comparison. SF rpm limit 6,500."
+    },
+    "EDF50-11B": {
+      "key": "EDF50-11B",
+      "name": "PowerFun 50 mm 11-blade ducted fan (synthetic coefficients)",
+      "mass": 0.015,
+      "data": "",
+      "diameter": 0.05,
+      "pitch": 0.05,
+      "rpm_max": null,
+      "points": [
+        {
+          "rpm": 25000.0,
+          "J": 0.0,
+          "CT": 1.4931,
+          "CP": 1.5152
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.1,
+          "CT": 1.3782,
+          "CP": 1.5125
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.2,
+          "CT": 1.2634,
+          "CP": 1.5044
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.3,
+          "CT": 1.1485,
+          "CP": 1.491
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.4,
+          "CT": 1.0337,
+          "CP": 1.4722
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.5,
+          "CT": 0.9188,
+          "CP": 1.448
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.6,
+          "CT": 0.804,
+          "CP": 1.4184
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.7,
+          "CT": 0.6891,
+          "CP": 1.3834
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.8,
+          "CT": 0.5743,
+          "CP": 1.3431
+        },
+        {
+          "rpm": 25000.0,
+          "J": 0.9,
+          "CT": 0.4594,
+          "CP": 1.2973
+        },
+        {
+          "rpm": 25000.0,
+          "J": 1.0,
+          "CT": 0.3446,
+          "CP": 1.2462
+        },
+        {
+          "rpm": 25000.0,
+          "J": 1.1,
+          "CT": 0.2297,
+          "CP": 1.1897
+        },
+        {
+          "rpm": 25000.0,
+          "J": 1.2,
+          "CT": 0.1149,
+          "CP": 1.1279
+        },
+        {
+          "rpm": 25000.0,
+          "J": 1.3,
+          "CT": 0.0,
+          "CP": 1.0606
+        },
+        {
+          "rpm": 25000.0,
+          "J": 1.4,
+          "CT": -0.1149,
+          "CP": 0.988
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.0,
+          "CT": 1.4931,
+          "CP": 1.5152
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.1,
+          "CT": 1.3782,
+          "CP": 1.5125
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.2,
+          "CT": 1.2634,
+          "CP": 1.5044
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.3,
+          "CT": 1.1485,
+          "CP": 1.491
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.4,
+          "CT": 1.0337,
+          "CP": 1.4722
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.5,
+          "CT": 0.9188,
+          "CP": 1.448
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.6,
+          "CT": 0.804,
+          "CP": 1.4184
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.7,
+          "CT": 0.6891,
+          "CP": 1.3834
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.8,
+          "CT": 0.5743,
+          "CP": 1.3431
+        },
+        {
+          "rpm": 50000.0,
+          "J": 0.9,
+          "CT": 0.4594,
+          "CP": 1.2973
+        },
+        {
+          "rpm": 50000.0,
+          "J": 1.0,
+          "CT": 0.3446,
+          "CP": 1.2462
+        },
+        {
+          "rpm": 50000.0,
+          "J": 1.1,
+          "CT": 0.2297,
+          "CP": 1.1897
+        },
+        {
+          "rpm": 50000.0,
+          "J": 1.2,
+          "CT": 0.1149,
+          "CP": 1.1279
+        },
+        {
+          "rpm": 50000.0,
+          "J": 1.3,
+          "CT": 0.0,
+          "CP": 1.0606
+        },
+        {
+          "rpm": 50000.0,
+          "J": 1.4,
+          "CT": -0.1149,
+          "CP": 0.988
+        }
+      ],
+      "notes": "SYNTHETIC COEFFICIENTS - NOT MEASURED, NOT FROM UIUC. Static CT 1.4931 / CP 1.5152 are back-solved from the published 3S/4S static points (with EDF50-4300KV). Forward-flight shape is an assumed bound: CT falls linearly to zero at J = 1.3 (momentum estimate of the efflux speed gives J of about 1.4-1.5, so 1.3 is the conservative side) and CP falls 30% over the same range; peak fan efficiency is about 0.33. The 25,000 and 50,000 rpm sweeps are identical copies (no Reynolds effect modeled). Free-air manufacturer thrust used an inlet ring; installed thrust is likely lower. pitch 0.05 m is a required-field placeholder only (FlightLab uses it for display, not physics). rpm_max left null: no manufacturer limit found. Diameter 0.05 m is the published fan size; disk area in the coefficients is pi*D^2/4."
     }
   },
   "notes": "-Lifting Surfaces are tentatively planned\nVerified optimized design: wing=e168, tail=naca0012; Cruise static margin 13.43% MAC, span efficiency 0.97169, pitch-control deflection +0.00172 deg.",
