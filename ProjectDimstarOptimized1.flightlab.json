@@ -166,18 +166,6 @@
       "skin_thickness": null
     },
     {
-      "name": "internal components",
-      "mass": 0.15,
-      "x": -0.1,
-      "y": 0.0,
-      "z": -0.05,
-      "distributed": "point",
-      "span": null,
-      "attached_to": "",
-      "density": null,
-      "skin_thickness": null
-    },
-    {
       "name": "Vertical tail",
       "mass": null,
       "x": 0.25,
@@ -187,6 +175,102 @@
       "span": null,
       "attached_to": "Vertical tail",
       "density": 25.0,
+      "skin_thickness": null
+    },
+    {
+      "name": "Fuselage",
+      "mass": 0.15,
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "point",
+      "span": null,
+      "attached_to": "",
+      "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "Tail Boom (R)",
+      "mass": 0.0625,
+      "x": 0.25,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "body_volume",
+      "span": null,
+      "attached_to": "RightBoom",
+      "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "Tail Boom (L)",
+      "mass": 0.0625,
+      "x": 0.25,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "body_volume",
+      "span": null,
+      "attached_to": "LeftBoom",
+      "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "aileron servo (R)",
+      "mass": 0.01,
+      "x": 0.1,
+      "y": 0.4,
+      "z": 0.0,
+      "distributed": "point",
+      "span": null,
+      "attached_to": "",
+      "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "aileron servo (L)",
+      "mass": 0.01,
+      "x": 0.1,
+      "y": -0.4,
+      "z": 0.0,
+      "distributed": "point",
+      "span": null,
+      "attached_to": "",
+      "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "elevator servo (R)",
+      "mass": 0.01,
+      "x": 0.9,
+      "y": 0.16,
+      "z": -0.05,
+      "distributed": "point",
+      "span": null,
+      "attached_to": "",
+      "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "elevator servo (L)",
+      "mass": 0.01,
+      "x": 0.9,
+      "y": -0.16,
+      "z": -0.05,
+      "distributed": "point",
+      "span": null,
+      "attached_to": "",
+      "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "Other Internal Components",
+      "mass": 0.155,
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "point",
+      "span": null,
+      "attached_to": "",
+      "density": null,
       "skin_thickness": null
     }
   ],
@@ -808,7 +892,7 @@
   "propulsion": {
     "battery": "B3S5000",
     "state_of_charge": 0.9,
-    "battery_x": -0.05,
+    "battery_x": -0.1,
     "battery_y": 0.0,
     "battery_z": 0.0,
     "include_component_masses": true,
