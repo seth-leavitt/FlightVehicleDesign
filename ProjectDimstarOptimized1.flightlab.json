@@ -70,15 +70,15 @@
           "x_le": 0.88,
           "y": -0.166,
           "z": -0.05,
-          "chord": 0.22,
+          "chord": 0.15,
           "twist_deg": 0.0,
           "airfoil": "naca0012"
         },
         {
-          "x_le": 0.98,
+          "x_le": 0.93,
           "y": -0.166,
-          "z": 0.21,
-          "chord": 0.1,
+          "z": 0.1,
+          "chord": 0.08,
           "twist_deg": 0.0,
           "airfoil": "naca0012"
         }
