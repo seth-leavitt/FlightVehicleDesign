@@ -1,0 +1,45 @@
+Spars: 3/8 dowels, 10mm spars
+
+Fuselage:
+ - Check area reduction from EDFs to the 'cloaca'
+ - add bridges to interior of fuselage
+ - make sure all components can fit in in the fuselage (and in the correct x-location for CG [z and y are not as important])
+ - design connection between wing spars and fuselage
+ - ways to secure electronic components to inside of fuselage (maybe add more ribs)
+
+Wingtips:
+ - Print-in-place ailerons
+ - print from tips to avoid cantilever
+ - extend 1in to fit spars
+ - ensure good tolerances (press-fit)
+
+Matt: Electronics milestone, CAD models of internal components if has extra time
+Talmage: Wingtips CAD
+Nate: CAD models of internal electronic components for 'virtual test fit'
+Seth: continue work on Fuselage CAD
+
+#### Pre-Foamed PLA-LW Print Experimentation ####
+Print Settings:
+0.4mm tolerance hinge stuck, but most beautiful cantilever result. Maybe would want to increase it just a little bit to 0.6 on the vertical
+0.8mm tolerance really tight to get loose, but worked decently for huge bridge/cantilever section.
+1.2 hinge broke free after a little convincing, but cantilever section result was poor
+1.6 hinge was a little loose, and the cantilever failed.
+
+ - Don't forget to turn brim back on
+ - increased infill by a bit
+ - decreased brim-object gap
+
+#### CG Stuff 11/05/2026 ####
+Flightlab CG: 0.0711 m
+Real CG: 0.13475 m
+
+Real CG is 2X from leading edge compared to flightlab.
+
+Remaining filament: 300g
+
+Plane is close to overweight, doesn't have all components installed
+FlightLab weight: 1.273 kg
+Real weight (still missing some components): 1.267 kg
+
+#### Wingtip Reprint ideas ####
+Move servo to the first spar to shift CG forward
